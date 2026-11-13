@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administration - Le Musée des Merveilles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="admin">
+    <div class="admin-shell">
+      <header class="topbar admin-topbar">
+        <div>
+          <p class="eyebrow">Panneau d'administration</p>
+          <h1>Le Musée des Merveilles</h1>
+        </div>
+        <div class="topbar-controls">
+          <a href="index.html" class="ghost">Vue publique</a>
+          <button data-action="export-json" class="secondary">Exporter</button>
+          <button data-action="import-json" class="primary">Importer</button>
+          <button data-action="reset-session" class="ghost danger">Réinitialiser session</button>
+        </div>
+      </header>
+
+      <main class="admin-layout">
+        <aside class="admin-panel">
+          <div class="panel-header">
+            <h2>Salles</h2>
+            <button data-action="add-room" class="small primary">Ajouter</button>
+          </div>
+          <div id="admin-room-list" class="stack-list"></div>
+        </aside>
+
+        <section class="admin-editor">
+          <div class="panel-header">
+            <h2>Éditeur</h2>
+          </div>
+          <div id="admin-form"></div>
+          <div class="export-box">
+            <label for="json-output">Données JSON</label>
+            <textarea id="json-output" rows="18"></textarea>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

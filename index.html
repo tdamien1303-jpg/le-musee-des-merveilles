@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le Musée des Merveilles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="public">
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">TikTok LIVE Studio</p>
+          <h1>Le Musée des Merveilles</h1>
+        </div>
+        <div class="topbar-controls">
+          <button data-action="toggle-auto" class="primary">Démarrer la visite</button>
+          <button data-action="next-room" class="secondary">Salle suivante</button>
+          <a href="admin.html" class="ghost">Administration</a>
+        </div>
+      </header>
+
+      <main class="museum-layout">
+        <aside class="side-panel rooms-panel">
+          <div class="panel-header">
+            <h2>Salles</h2>
+            <span id="room-count">0</span>
+          </div>
+          <div id="room-list" class="stack-list"></div>
+        </aside>
+
+        <section class="stage-panel">
+          <div class="stage-topline">
+            <div>
+              <p class="eyebrow">Exposition actuelle</p>
+              <h2 id="current-room-name">Salle</h2>
+            </div>
+            <div class="progress-wrap">
+              <span>Jauge collective</span>
+              <div class="progress-bar">
+                <div id="progress-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card" id="hero-card"></div>
+
+          <div class="gallery-strip" id="gallery-strip"></div>
+
+          <div class="info-grid">
+            <div class="meta-panel">
+              <div class="meta-head">
+                <span id="exhibit-category">Catégorie</span>
+                <span id="exhibit-country">Pays</span>
+              </div>
+              <h3 id="exhibit-name">Nom</h3>
+              <p id="exhibit-description"></p>
+              <ul id="exhibit-facts"></ul>
+            </div>
+
+            <div class="detail-panel">
+              <h4>Informations</h4>
+              <dl id="exhibit-details"></dl>
+            </div>
+          </div>
+
+          <div class="voice-panel">
+            <button data-action="speak" class="primary">Lecture vocale</button>
+            <button data-action="repeat" class="secondary">Répéter</button>
+            <button data-action="pause-voice" class="ghost">Silencieux</button>
+            <label>
+              <span>Voix</span>
+              <select id="voice-select"></select>
+            </label>
+            <label>
+              <span>Vitesse</span>
+              <input id="voice-rate" type="range" min="0.7" max="1.4" step="0.1" value="1" />
+            </label>
+          </div>
+
+          <div class="quiz-card" id="quiz-card"></div>
+        </section>
+
+        <aside class="side-panel exhibits-panel">
+          <div class="panel-header">
+            <h2>Expositions</h2>
+            <span id="exhibit-count">0</span>
+          </div>
+          <div id="exhibit-list" class="stack-list"></div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
